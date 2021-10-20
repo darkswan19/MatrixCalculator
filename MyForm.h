@@ -383,7 +383,7 @@ namespace MatrixDeterminant {
 			this->button3->TabIndex = 28;
 			this->button3->Text = L"=";
 			this->button3->UseVisualStyleBackColor = true;
-//			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// comboBox1
 			// 
@@ -525,6 +525,68 @@ bool defence() { //to avoid errors and empty cells
 		}
 	}
 }
+bool defence2() { //to avoid errors and empty cells
+	if ((textBox10->Text->Length == 0) || (textBox11->Text->Length == 0) || (textBox12->Text->Length == 0) || (textBox14->Text->Length == 0) || (textBox15->Text->Length == 0) || (textBox16->Text->Length == 0) || (textBox17->Text->Length == 0) || (textBox18->Text->Length == 0)) {
+		return false;
+	}
+	for (int i = 0; i < textBox10->Text->Length; i++) {
+		if ((textBox10->Text[0] == '-') || (textBox10->Text[i] >= '0') & (textBox10->Text[i] <= '9')) { return true; }
+		else { return false; }
+		if ((textBox10->Text[0] == '.') || (textBox10->Text[textBox10->Text->Length - 1] == '.')) {
+			return false;
+		}
+	}
+	for (int i = 0; i < textBox11->Text->Length; i++) {
+		if ((textBox11->Text[0] == '-') || (textBox11->Text[i] >= '0') & (textBox11->Text[i] <= '9')) { return true; }
+		else { return false; }
+		if ((textBox11->Text[0] == '.') || (textBox11->Text[textBox11->Text->Length - 1] == '.')) {
+			return false;
+		}
+	}
+	for (int i = 0; i < textBox12->Text->Length; i++) {
+		if ((textBox12->Text[0] == '-') || (textBox12->Text[i] >= '0') & (textBox12->Text[i] <= '9')) { return true; }
+		else { return false; }
+		if ((textBox12->Text[0] == '.') || (textBox12->Text[textBox12->Text->Length - 1] == '.')) {
+			return false;
+		}
+	}
+	for (int i = 0; i < textBox14->Text->Length; i++) {
+		if ((textBox14->Text[0] == '-') || (textBox14->Text[i] >= '0') & (textBox14->Text[i] <= '9')) { return true; }
+		else { return false; }
+		if ((textBox14->Text[0] == '.') || (textBox14->Text[textBox14->Text->Length - 1] == '.')) {
+			return false;
+		}
+	}
+	for (int i = 0; i < textBox15->Text->Length; i++) {
+		if ((textBox15->Text[0] == '-') || (textBox15->Text[i] >= '0') & (textBox15->Text[i] <= '9')) { return true; }
+		else { return false; }
+		if ((textBox15->Text[0] == '.') || (textBox15->Text[textBox15->Text->Length - 1] == '.')) {
+			return false;
+		}
+	}
+	for (int i = 0; i < textBox16->Text->Length; i++) {
+		if ((textBox16->Text[0] == '-') || (textBox16->Text[i] >= '0') & (textBox6->Text[i] <= '9')) { return true; }
+		else { return false; }
+		if ((textBox16->Text[0] == '.') || (textBox16->Text[textBox16->Text->Length - 1] == '.')) {
+			return false;
+		}
+	}
+	for (int i = 0; i < textBox17->Text->Length; i++) {
+		if ((textBox17->Text[0] == '-') || (textBox17->Text[i] >= '0') & (textBox17->Text[i] <= '9')) { return true; }
+		else { return false; }
+		if ((textBox17->Text[0] == '.') || (textBox17->Text[textBox17->Text->Length - 1] == '.')) {
+			return false;
+		}
+	}
+	for (int i = 0; i < textBox18->Text->Length; i++) {
+		if ((textBox18->Text[0] == '-') || (textBox18->Text[i] >= '0') & (textBox18->Text[i] <= '9')) { return true; }
+		else { return false; }
+		if ((textBox18->Text[0] == '.') || (textBox18->Text[textBox18->Text->Length - 1] == '.')) {
+			return false;
+		}
+	}
+}
+
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	textBox1->Text = L"";
 	textBox2->Text = L"";
@@ -610,15 +672,14 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("Error! Incorrect data");
 	}
 }
-//private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	//if (defence2()) {
-		//convert_calculate2();
-	//}
-	//else {
-		//MessageBox::Show("Error! Incorrect data");
-	//}
-//}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (defence2()) {
+		convert_calculate2();
+	}
+	else {
+		MessageBox::Show("Error! Incorrect data");
+}
+//private: System::Void label5_Click(System::Object ^ sender, System::EventArgs ^ e) {
 }
 
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
